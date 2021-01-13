@@ -1,0 +1,74 @@
+﻿@model DataPaginator<InputModelRegister>
+
+@{
+    ViewData["Title"] = "Users";
+}
+<div class="container  p-4">
+    <div class="form-group">
+        <form class="form-check-input" asp-area="Users" asp-action="Users" method="get">
+            <div class="row flex-row-reverse">
+                <div class="col col-md-6">
+                    <input type="text" id="filter" name="filter" placeholder="Search" class="form-control" />
+                </div>
+                <div class="col col-md-6">
+                    <input type="submit" value="Searc" class="btn bnt-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="form-group">
+        <form class="form-check-input" action="" method="post">
+            <div class="row flex-row-reverse">
+                <div class="col col-md-6">
+                    <a asp-area="Users" asp-page="/Account/Register" class="btn btn-primary text-white">Add</a>
+                </div>
+                <div class="col col-md-6">
+                    <input type="submit" value="Searc" class="btn bnt-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row form-row">
+        @foreach(var item in Model.List)
+        {
+            var image = "data:image/jpg;base64," + Convert.ToBase64String(item.Image, 0, item.Image.Length);
+            <div class="col-xs-6 col-md-2">
+                <div class="card text-center text-capitalize">
+                    <div class="card-header">
+                        <a asp-route-id="@item.Id" asp-area="Users" asp-page="/Account/Details">
+                            <img class="imageUser" src="@image" />
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <table class="tableCursos">
+                            <tbody class="d-lg-table">
+                                <tr>
+                                    <td>
+                                        <p>@Html.DisplayFor(modelItem => item.Name)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>@Html.DisplayFor(modelItem => item.Role)</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        if (item.identityUser.LockoutEnabled)
+                                        {
+                                            <p class="text-success text-capitalize"> available </p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-success text-capitalize">not available</p>
+                                        }
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
