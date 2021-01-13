@@ -26,8 +26,15 @@ using pruebacs1.Areas.Users.Pages.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Pages\_ViewImports.cshtml"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"60b6d0afbb05c0d4e651a805457cafd7ffe9ae79", @"/Areas/Users/Pages/Login/Login.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"11b20e91721930379c509ece3e89948f09554d68", @"/Areas/Users/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c35924acf9a4c44fac1ef68d8b0ece3fb84cc744", @"/Areas/Users/Pages/_ViewImports.cshtml")]
     public class Areas_Users_Pages_Login_Login : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

@@ -26,11 +26,20 @@ namespace pruebacs1.Areas.Users.Pages.Account
         public void OnGet(int Id)
         {
             var data = _User.getTableUsersAsync(null, Id);
+            if (0 < data.Result.Count)
+            {
+                Input = new InputModel
+                {
+                    DataUser = data.Result.ToList().Last(),
+                };
+            }
         }
-
+            [BindProperty]
+            public InputModel Input { get; set; }
         public class InputModel
         {
             public InputModelRegister DataUser { get; set; }
         }
     }
 }
+

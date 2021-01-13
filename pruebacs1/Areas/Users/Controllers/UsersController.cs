@@ -51,10 +51,10 @@ namespace pruebacs1.Areas.Users.Controllers
                     List = (List<InputModelRegister>) Objets[2],
                     Pag_info = (String)Objets[0],
                     Pag_navigation = (string)Objets[1],
-                    Input = new InputModelRegister()
+                    Input = new InputModelRegister(),
                      
                  };
-            
+            Console.WriteLine(modelos);
             return View(modelos);
             /*}
             /*else

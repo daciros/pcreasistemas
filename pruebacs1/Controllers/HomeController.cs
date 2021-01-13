@@ -16,20 +16,20 @@ namespace pruebacs1.Controllers
         private readonly ILogger<HomeController> _logger;
         //IServiceProvider _serviceProvider;
 
-        /*public HomeController(IServiceProvider serviceProvider)
-        {
-            _serviceProvider = serviceProvider;
-        }*/
-       public HomeController(ILogger<HomeController> logger)
+        //public HomeController(IServiceProvider serviceProvider)
+        //{
+        //    _serviceProvider = serviceProvider;
+        //}
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        /*public async Task < IActionResult> Index()
-        {
-            await CreateRolesAsync(_serviceProvider);
-            return View();
-        }*/
+        //public async Task<IActionResult> Index()
+        //{
+        //    await CreateRolesAsync(_serviceProvider);
+        //    return View();
+        //}
         public IActionResult Index()
         {
             return View();
@@ -45,18 +45,18 @@ namespace pruebacs1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        /*private async Task CreateRolesAsync(IServiceProvider serviceProvider) 
-        {
-            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            String[] rolesName = { "admin", "user", "client"};
-            foreach(var i in rolesName)
-            {
-                var rolExist = await roleManager.RoleExistsAsync(i);
-                if (!rolExist)
-                {
-                    await roleManager.CreateAsync(new IdentityRole(i));
-                }
-            }
-        } */
+        //private async Task CreateRolesAsync(IServiceProvider serviceProvider)
+        //{
+        //    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        //    String[] rolesName = { "Admin", "User", "Client" };
+        //    foreach (var i in rolesName)
+        //    {
+        //        var rolExist = await roleManager.RoleExistsAsync(i);
+        //        if (!rolExist)
+        //        {
+        //            await roleManager.CreateAsync(new IdentityRole(i));
+        //        }
+        //    }
+        //}
     }
 }

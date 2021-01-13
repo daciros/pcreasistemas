@@ -1,4 +1,112 @@
 ﻿@page
 @model DetailsModel
 @{
+    var image = "data:image/jpg;base64," + Convert.ToBase64String(Model.Input.DataUser.Image, 0, Model.Input.DataUser.Image.Length);
+    var name = Model.Input.DataUser.Name + "   " + Model.Input.DataUser.LastName;
 }
+
+<div class="container">
+    <div class="card-title">@name</div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="card text-center" style="width: 21rem;">
+                <img class="imageUser" src="@image" />
+                <div class="card-body">
+                    <table class="tableCursos">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p> @Model.Input.DataUser.Name</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataUser.Role</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @if (Model.Input.DataUser.identityUser.LockoutEnabled)
+                                    {
+                                        <p class="text-success">Disponible</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="text-danger">No Disponible</p>
+                                    }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <table class="tableCursos">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Information
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Id Number
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataUser.IdNumber</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Name
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataUser.Name</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Phone
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataUser.PhoneNumber</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Email
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataUser.Email</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form asp-area="Users" asp-page="Register" method="post">
+                                        @{
+                                            var dataUser = JsonConvert.SerializeObject(Model.Input.DataUser);
+                                        }
+                                        <input type="hidden" name="DataUser" value="@dataUser" />
+                                        <input type="submit" value="Editar" class="btn btn-success" />
+
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

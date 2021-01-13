@@ -10,8 +10,8 @@ using pruebacs1.Data;
 namespace pruebacs1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210113010606_DataFacturing1")]
-    partial class DataFacturing1
+    [Migration("20210113170015_DataFacturingAzure")]
+    partial class DataFacturingAzure
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

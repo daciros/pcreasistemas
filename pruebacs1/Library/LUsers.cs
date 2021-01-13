@@ -13,7 +13,8 @@ namespace pruebacs1.Library
     public class LUsers : ListObject
     {
 
-        public LUsers(SignInManager<IdentityUser> signInManager,
+        public LUsers(
+            SignInManager<IdentityUser> signInManager,
             RoleManager<IdentityRole> roleManager,
             UserManager<IdentityUser> userManager,
             ApplicationDbContext context)
@@ -38,18 +39,18 @@ namespace pruebacs1.Library
             {
                 ListUsers = _context.TableUsers.ToList();
             }
-
-
-            if (id.Equals(0))
-            {
-                ListUsers = _context.TableUsers.Where(u => u.IdNumber.StartsWith(value) || u.IdUser.StartsWith(value) || u.Name.StartsWith(value)
-                || u.LastName.StartsWith(value) || u.Email.StartsWith(value)).ToList();
-            }
             else
             {
-                ListUsers = _context.TableUsers.Where(u => u.ID.Equals(id)).ToList();
+                if (id.Equals(0))
+                {
+                    ListUsers = _context.TableUsers.Where(u => u.IdNumber.StartsWith(value) || u.IdUser.StartsWith(value) || u.Name.StartsWith(value)
+                    || u.LastName.StartsWith(value) || u.Email.StartsWith(value)).ToList();
+                }
+                else
+                {
+                    ListUsers = _context.TableUsers.Where(u => u.ID.Equals(id)).ToList();
+                }
             }
-
 
             if (!ListUsers.Count.Equals(0))
             {
