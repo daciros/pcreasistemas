@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Areas\Billing\Data\" />
     <Folder Include="Areas\Products\Data\" />
-    <Folder Include="Areas\Products\Views\" />
     <Folder Include="Areas\Sales\Data\" />
     <Folder Include="Areas\Sales\Views\" />
     <Folder Include="Areas\Users\Data\" />

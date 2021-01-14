@@ -12,7 +12,12 @@
                             <h1>Login</h1>
                         </div>
                     </div>
-                    <form asp-controller="" asp-action="Index" method="POST" >
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <img class="imageLogin" src="~/images/images/login.png"/>
+                        </div>
+                    </div>
+                    <form asp-controller="" asp-action="Index" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" asp-for="Email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" autofocus>

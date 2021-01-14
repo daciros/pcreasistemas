@@ -9,6 +9,7 @@ namespace pruebacs1.Areas.Billing.Models
     {
         public int ID { get; set; }
         public int Id_User { get; set; }
+        public int Bill_Num { get; set; }
         public string Name_Product { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
