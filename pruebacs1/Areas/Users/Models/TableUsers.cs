@@ -17,9 +17,6 @@ namespace pruebacs1.Areas.Users.Models
         public string Role { get; set; }
         public byte[] Image { get; set; }
 
-        public static implicit operator TableUsers(string v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

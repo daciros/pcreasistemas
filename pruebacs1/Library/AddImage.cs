@@ -10,9 +10,9 @@ namespace pruebacs1.Library
 {
     public class AddImage
     {
-        public async Task<Byte[]> ByteAvatarImageAsync(IFormFile AvatarImage, IWebHostEnvironment environment)
+        public async Task<Byte[]> ByteAvatarImageAsync(IFormFile AvatarImage, IWebHostEnvironment environment, string image)
         {
-            string image = "images/images/default.png";
+             image = "images/images/default.png";
             if (AvatarImage != null)
             {
                 using (var memoryStream = new MemoryStream())

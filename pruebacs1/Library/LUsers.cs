@@ -57,7 +57,7 @@ namespace pruebacs1.Library
                 foreach (var item in ListUsers)
                 {
                     ListRoles = await _userRoles.getRole(_userManager, _roleManager, item.IdUser);
-                    var user = _context.TableUsers.Where(u => u.ID.Equals(item.IdUser)).ToList().Last();
+                    var user = _context.TableUsers.Where(u => u.IdUser.Equals(item.IdUser)).ToList().Last();
                     userlist.Add(item: new InputModelRegister
                     {
                         Id = item.ID,

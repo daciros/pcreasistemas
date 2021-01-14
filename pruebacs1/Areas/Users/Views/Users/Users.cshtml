@@ -3,33 +3,58 @@
 @{
     ViewData["Title"] = "Users";
 }
-<div class="container  p-4">
-    <div class="form-group">
-        <form class="form-check-input" asp-area="Users" asp-action="Users" method="get">
-            <div class="row flex-row-reverse">
-                <div class="col col-md-6">
-                    <input type="text" id="filter" name="filter" placeholder="Search" class="form-control" />
+<div class="container  p-5">
+    <div class="row">
+        <div class="form-group">
+            <form asp-area="Users" asp-controller="Users" asp-action="Users" method="get">
+                <div class="row ">
+                    <div class="form-group">
+                        <div class="col col-md-12">
+                            <input type="text" id="filter" name="filter" placeholder="Search" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col col-md-4">
+                            <input type="submit" value="Searc" class="btn bnt-success" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-md-6">
-                    <input type="submit" value="Searc" class="btn bnt-success" />
+            </form>
+        </div>
+        &nbsp;
+        <div class="form-group">
+            <div class="row">
+                <div class="form-group">
+                    <form action="" method="post">
+                        
+                            <div class="col col-md-1">
+                                <a asp-route-id="0" asp-area="Users" asp-page="/Account/Register" class="btn btn-primary text-white">Add</a>
+                            </div>
+                            <div class="col col-md-4">
+                                <input type="submit" value="Search" class=" bnt-success" />
+                            </div>
+                       
+                    </form>
                 </div>
+                <form asp-area="Users" asp-controller="Users" asp-action="Users" method="get">
+                    <div class="row ">
+                        <div class="form-group">
+                            <div class="col col-md-4">
+                                <input type="number" name="number" value="5" min="1" class="form-control" max="50" step="1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col col-md-4">
+                                <input type="submit" value="N Registers" class="btn bnt-success" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-    <div class="form-group">
-        <form class="form-check-input" action="" method="post">
-            <div class="row flex-row-reverse">
-                <div class="col col-md-6">
-                    <a asp-area="Users" asp-page="/Account/Register" class="btn btn-primary text-white">Add</a>
-                </div>
-                <div class="col col-md-6">
-                    <input type="submit" value="Searc" class="btn bnt-success" />
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row form-row">
-        @foreach(var item in Model.List)
+    <div class="row ">
+        @foreach (var item in Model.List)
         {
             var image = "data:image/jpg;base64," + Convert.ToBase64String(item.Image, 0, item.Image.Length);
             <div class="col-xs-6 col-md-2">
@@ -40,35 +65,38 @@
                         </a>
                     </div>
                     <div class="card-body text-center">
-                        <table class="tableCursos">
-                            <tbody class="d-lg-table">
-                                <tr>
-                                    <td>
-                                        <p>@Html.DisplayFor(modelItem => item.Name)</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p>@Html.DisplayFor(modelItem => item.Role)</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        if (item.identityUser.LockoutEnabled)
-                                        {
-                                            <p class="text-success text-capitalize"> available </p>
-                                        }
-                                        else
-                                        {
-                                            <p class="text-success text-capitalize">not available</p>
-                                        }
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <p>@Html.DisplayFor(ModeItem => item.Name, "  ",item.LastName)</p>
+                            </div>
+                            <div class="row">
+                                <p>Role: </p>
+                                &nsub;
+                                <p>@Html.DisplayFor(ModeItem => item.Role)</p>
+                            </div>
+                            <div class="row">
+                                @*@if (item.identityUser.LockoutEnabled)
+                                {
+                                    <p class="text-success">Availabe</p>
+                                }
+                                else
+                                {
+                                    <p class="text-success">Not Availabe</p>
+                                }*@
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-success" asp-route-id="@item.Id"
+                                   asp-area="Users" asp-page="/Account/Details">Details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         }
     </div>
+</div>
+<div class="text-dark text-center">
+    Results @Html.Raw(Model.Pag_info)
+    <br />
+    @Html.Raw(Model.Pag_navigation)
 </div>

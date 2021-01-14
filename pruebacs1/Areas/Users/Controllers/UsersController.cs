@@ -29,7 +29,7 @@ namespace pruebacs1.Areas.Users.Controllers
             _signInManager = signInManager;
             _Users = new LUsers(signInManager, roleManager, userManager, context);
         }
-        public IActionResult Users( int id, string filter)
+        public IActionResult Users( int id, string filter, int number)
         {
             //if (_signInManager.IsSignedIn(User))
            // {
@@ -38,7 +38,7 @@ namespace pruebacs1.Areas.Users.Controllers
                 if (0 < Data.Result.Count)
                 {
                     var url = Request.Scheme + "://" + Request.Host.Value;
-                    Objets = new LPaginator<InputModelRegister>().Paginator(Data.Result, id, 10,"Users", "Users", "Users", url);
+                    Objets = new LPaginator<InputModelRegister>().Paginator(Data.Result, id, number,"Users", "Users", "Users", url);
                 }
                 else
                 {

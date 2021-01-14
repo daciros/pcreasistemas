@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace pruebacs1.Areas.Users.Models
 {
@@ -39,5 +40,8 @@ namespace pruebacs1.Areas.Users.Models
         public int Id { get; set; }
         public string ID { get; set; }
         public IdentityUser identityUser { get; set; }
+       
+        [TempData]
+        public string ErrorMessage { get; set; }
     }
 }

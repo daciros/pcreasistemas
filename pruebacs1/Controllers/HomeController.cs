@@ -13,17 +13,17 @@ namespace pruebacs1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
         //IServiceProvider _serviceProvider;
 
         //public HomeController(IServiceProvider serviceProvider)
         //{
         //    _serviceProvider = serviceProvider;
         //}
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         //public async Task<IActionResult> Index()
         //{
