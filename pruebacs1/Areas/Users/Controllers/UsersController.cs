@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using pruebacs1.Areas.Users.Models;
+using pruebacs1.Controllers;
 using pruebacs1.Data;
 using pruebacs1.Library;
 using pruebacs1.Models;
@@ -31,8 +32,8 @@ namespace pruebacs1.Areas.Users.Controllers
         }
         public IActionResult Users( int id, string filter, int number)
         {
-            //if (_signInManager.IsSignedIn(User))
-           // {
+            if (_signInManager.IsSignedIn(User))
+            {
                 object[] Objets = new object[3];
                 var Data = _Users.getTableUsersAsync(filter, 0);
                 if (0 < Data.Result.Count)
@@ -56,12 +57,17 @@ namespace pruebacs1.Areas.Users.Controllers
                  };
             Console.WriteLine(modelos);
             return View(modelos);
-            /*}
-            /*else
+            }
+            else
             {
                 return Redirect("/");
-            }*/
+            }
 
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }

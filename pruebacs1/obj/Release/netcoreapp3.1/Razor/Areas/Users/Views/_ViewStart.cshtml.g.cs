@@ -12,7 +12,29 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Views\_ViewImports.cshtml"
+using pruebacs1;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Views\_ViewImports.cshtml"
+using pruebacs1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Views\_ViewImports.cshtml"
+using pruebacs1.Areas.Users.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b71f4943631a49f668a86dcafe74da8e280c6ee2", @"/Areas/Users/Views/_ViewStart.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb91b86d53fdc5538fcf7eae065a247b3b551f9a", @"/Areas/Users/Views/_ViewImports.cshtml")]
     public class Areas_Users_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -8,8 +8,8 @@
             }
         }
         switch (url) {
-            case "UsersAccountRegister":
-                document.getElementById('files').addEventListener('change', imageUser, false);
+            case "UsersRegister":
+                document.getElementById(id).addEventListener('change', imageUser, false);
                 console.log( url);
                 break;
         }

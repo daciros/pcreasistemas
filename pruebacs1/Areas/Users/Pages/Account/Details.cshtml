@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "/Users/Details"
 @model DetailsModel
 @{
     var image = "data:image/jpg;base64," + Convert.ToBase64String(Model.Input.DataUser.Image, 0, Model.Input.DataUser.Image.Length);
@@ -25,8 +25,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                @*<td>
-                                    @if (Model.Input.DataUser.identityUser.LockoutEnabled)
+                                <td>
+                                    @if ( Model.User.Identity.IsAuthenticated)
                                     {
                                         <p class="text-success">Disponible</p>
                                     }
@@ -34,7 +34,7 @@
                                     {
                                         <p class="text-danger">No Disponible</p>
                                     }
-                                </td>*@
+                                </td>
                             </tr>
                         </tbody>
                     </table>

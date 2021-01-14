@@ -5,7 +5,7 @@
 var primary = new Primary();
 var User = new Users();
 var imageUser = (evt) => {
-    User.file(evt, "imageUser");
+    User.file(evt, "ImageUser");
 }
 
 $().ready(() => {

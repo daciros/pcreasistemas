@@ -11,7 +11,7 @@ namespace pruebacs1.Areas.Billing.Controllers
     {
         public IActionResult Billing()
         {
-            return View();
+            return View("Billing");
         }
     }
 }

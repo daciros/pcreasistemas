@@ -21,20 +21,27 @@ using pruebacs1;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Views\_ViewImports.cshtml"
-using pruebacs1.Models;
+using pruebacs1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Views\_ViewImports.cshtml"
+using pruebacs1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Views\_ViewImports.cshtml"
 using pruebacs1.Areas.Users.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cb91b86d53fdc5538fcf7eae065a247b3b551f9a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"feb6dbad9c5dcb1a683368c95976a4c4b4ebc094", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

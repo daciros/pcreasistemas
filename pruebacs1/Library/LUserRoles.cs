@@ -23,10 +23,10 @@ namespace pruebacs1.Library
             return _selectList;
         }
         public async Task<List<SelectListItem>> getRole(UserManager<IdentityUser> userManager, 
-            RoleManager<IdentityRole> roleManager, string ID)
+            RoleManager<IdentityRole> roleManager, string Id)
         {
             List<SelectListItem> _selectList = new List<SelectListItem>();
-            var Users = await userManager.FindByIdAsync(ID);
+            var Users = await userManager.FindByIdAsync(Id);
             var role = await userManager.GetRolesAsync(Users);
             if (role.Count.Equals(0))
             {

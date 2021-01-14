@@ -26,8 +26,22 @@ using pruebacs1.Areas.Users.Pages.Account;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Pages\_ViewImports.cshtml"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Pages\_ViewImports.cshtml"
+using pruebacs1.Areas.Users.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b71f4943631a49f668a86dcafe74da8e280c6ee2", @"/Areas/Users/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"11b20e91721930379c509ece3e89948f09554d68", @"/Areas/Users/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1177e3b1194bd8391c66ad9170cc38a595be99a", @"/Areas/Users/Pages/_ViewImports.cshtml")]
     public class Areas_Users_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

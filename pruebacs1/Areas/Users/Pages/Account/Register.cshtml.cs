@@ -110,7 +110,7 @@ namespace pruebacs1.Areas.Users.Pages.Account
                 {
                     if (await SaveAsync())
                     {
-                        return Redirect("/Users/Users?area=Users");
+                        return RedirectToAction("/Users/Users?area=Users");
                     }
                     else
                     {

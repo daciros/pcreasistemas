@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using pruebacs1.Areas.Billing.Controllers;
 using pruebacs1.Areas.Users.Models;
 using pruebacs1.Data;
 using pruebacs1.Library;
@@ -20,6 +21,7 @@ namespace pruebacs1.Controllers
         //IServiceProvider _serviceProvider;
         public static InputModelLogin _inputModelLogin;
         public LUsers _usuario;
+        public SignInManager<IdentityUser> _signInManager;
 
         public HomeController(SignInManager<IdentityUser> signInManager,
             RoleManager<IdentityRole> roleManager,
@@ -28,6 +30,7 @@ namespace pruebacs1.Controllers
             IServiceProvider serviceProvider)
         {
             _usuario = new LUsers(signInManager, roleManager, userManager, context);
+            _signInManager = signInManager;
             //_serviceProvider = serviceProvider;
         }
         //public HomeController(ILogger<HomeController> logger)
@@ -44,7 +47,7 @@ namespace pruebacs1.Controllers
                 var result = await _usuario.UserLoginAsync(inputModelLogin);
                if (result.Succeeded)
                 {
-                    return View("/Billing/Billing");
+                    return Redirect("/Billing/Billing");
                 }
                 else
                 {
@@ -67,12 +70,24 @@ namespace pruebacs1.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            //await CreateRolesAsync(_serviceProvider);
-            if (_inputModelLogin != null)
+            if (_signInManager.IsSignedIn(User))
             {
-                return View(_inputModelLogin);
+                return RedirectToAction(nameof(BillingController.Billing), "Billing");
             }
-            return View();
+            else
+            {
+                if (_inputModelLogin != null)
+                {
+                    return View(_inputModelLogin);
+                }
+                else
+                {
+                    return View();
+                }
+                
+            }
+            //await CreateRolesAsync(_serviceProvider);
+           
         }
 
         public IActionResult Privacy()
