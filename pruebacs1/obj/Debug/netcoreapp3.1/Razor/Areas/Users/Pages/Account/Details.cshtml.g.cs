@@ -33,8 +33,15 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Pages\_ViewImports.cshtml"
+using pruebacs1.Areas.Users.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0c5c7d087ba2ecc65b4f3c8282850fc0350f8d69", @"/Areas/Users/Pages/Account/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c35924acf9a4c44fac1ef68d8b0ece3fb84cc744", @"/Areas/Users/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1177e3b1194bd8391c66ad9170cc38a595be99a", @"/Areas/Users/Pages/_ViewImports.cshtml")]
     public class Areas_Users_Pages_Account_Details : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "Users", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -195,7 +202,7 @@ WriteAttributeValue("", 483, image, 483, 6, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c5c7d087ba2ecc65b4f3c8282850fc0350f8d6910200", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c5c7d087ba2ecc65b4f3c8282850fc0350f8d6910406", async() => {
                 WriteLiteral("\r\n");
 #nullable restore
 #line 97 "C:\Users\daciros\source\prueba\pruebacs1\pruebacs1\Areas\Users\Pages\Account\Details.cshtml"

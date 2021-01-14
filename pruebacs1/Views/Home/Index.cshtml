@@ -1,4 +1,4 @@
-﻿@model InputModelRegister
+﻿@model InputModelLogin
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -12,7 +12,7 @@
                             <h1>Login</h1>
                         </div>
                     </div>
-                    <form asp-controller="" asp-action="Index" method="post" name="login">
+                    <form asp-controller="" asp-action="Index" method="POST" >
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" asp-for="Email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" autofocus>
@@ -24,10 +24,12 @@
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <span class="text-center text-danger">@Html.DisplayFor(m => m.ErrorMessage) <a href="#">Terms Of Use</a></span>
+                            <div class="row ">
+                                <span class="text-center text-danger">@Html.DisplayFor(m => m.ErrorMessage) </span>
+                            </div>
                         </div>
                         <div class="col-md-12 text-center ">
-                            <button type="submit" class=" btn btn-block mybtn  btn-primary tx-tfm">Login</button>
+                            <button class=" btn btn-block mybtn  btn-primary tx-tfm">Login</button>
                         </div>
                         <div class="col-md-12 ">
                             <div class="login-or">
@@ -39,7 +41,7 @@
                             <p class="text-center">
                                 <a href="javascript:void();" class="google btn mybtn">
                                     <i class="fa fa-google-plus">
-                                    </i> 
+                                    </i>
                                 </a>
                             </p>
                         </div>
@@ -50,6 +52,9 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+</div>
             
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />

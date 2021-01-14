@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using pruebacs1.Areas.Users.Models;
+using pruebacs1.Data;
+using pruebacs1.Library;
 using pruebacs1.Models;
 
 namespace pruebacs1.Controllers
@@ -15,23 +18,60 @@ namespace pruebacs1.Controllers
     {
         //private readonly ILogger<HomeController> _logger;
         //IServiceProvider _serviceProvider;
+        public static InputModelLogin _inputModelLogin;
+        public LUsers _usuario;
 
-        //public HomeController(IServiceProvider serviceProvider)
-        //{
-        //    _serviceProvider = serviceProvider;
-        //}
+        public HomeController(SignInManager<IdentityUser> signInManager,
+            RoleManager<IdentityRole> roleManager,
+            UserManager<IdentityUser> userManager,
+            ApplicationDbContext context,
+            IServiceProvider serviceProvider)
+        {
+            _usuario = new LUsers(signInManager, roleManager, userManager, context);
+            //_serviceProvider = serviceProvider;
+        }
         //public HomeController(ILogger<HomeController> logger)
         //{
         //    _logger = logger;
         //}
-
-        //public async Task<IActionResult> Index()
-        //{
-        //    await CreateRolesAsync(_serviceProvider);
-        //    return View();
-        //}
-        public IActionResult Index()
+        [HttpPost]
+        public async Task<IActionResult> Index(InputModelLogin inputModelLogin)
         {
+            
+            _inputModelLogin = inputModelLogin;
+            if (ModelState.IsValid)
+            {
+                var result = await _usuario.UserLoginAsync(inputModelLogin);
+               if (result.Succeeded)
+                {
+                    return View("/Billing/Billing");
+                }
+                else
+                {
+                    _inputModelLogin.ErrorMessage = "Email or Password are invalids";
+                    return Redirect("/");
+                }
+            }
+            else
+            {
+                foreach (var modelState in ModelState.Values)
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        _inputModelLogin.ErrorMessage = error.ErrorMessage;
+                    }
+                }
+                return Redirect("/");
+            }
+           
+        }
+        public async Task<IActionResult> Index()
+        {
+            //await CreateRolesAsync(_serviceProvider);
+            if (_inputModelLogin != null)
+            {
+                return View(_inputModelLogin);
+            }
             return View();
         }
 

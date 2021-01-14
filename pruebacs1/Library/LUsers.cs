@@ -13,8 +13,7 @@ namespace pruebacs1.Library
     public class LUsers : ListObject
     {
 
-        public LUsers(
-            SignInManager<IdentityUser> signInManager,
+        public LUsers(SignInManager<IdentityUser> signInManager,
             RoleManager<IdentityRole> roleManager,
             UserManager<IdentityUser> userManager,
             ApplicationDbContext context)
@@ -75,6 +74,16 @@ namespace pruebacs1.Library
 
             }
             return userlist;
+        }
+        internal async Task<SignInResult> UserLoginAsync(InputModelLogin inputModelLogin)
+        {
+            var result = await _signInManager.PasswordSignInAsync(inputModelLogin.Email,
+                inputModelLogin.Password, false, lockoutOnFailure:false);
+            if (result.Succeeded)
+            {
+
+            }
+            return result;
         }
     }
 
