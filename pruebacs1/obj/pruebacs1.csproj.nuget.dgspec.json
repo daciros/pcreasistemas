@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daciros\\source\\prueba\\pruebacs1\\pruebacs1\\pruebacs1.csproj": {}
+    "C:\\Users\\daciros\\OneDrive - Ucompensar\\Documents\\semillero\\pcreasistemas\\pruebacs1\\pruebacs1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daciros\\source\\prueba\\pruebacs1\\pruebacs1\\pruebacs1.csproj": {
+    "C:\\Users\\daciros\\OneDrive - Ucompensar\\Documents\\semillero\\pcreasistemas\\pruebacs1\\pruebacs1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daciros\\source\\prueba\\pruebacs1\\pruebacs1\\pruebacs1.csproj",
+        "projectUniqueName": "C:\\Users\\daciros\\OneDrive - Ucompensar\\Documents\\semillero\\pcreasistemas\\pruebacs1\\pruebacs1.csproj",
         "projectName": "pruebacs1",
-        "projectPath": "C:\\Users\\daciros\\source\\prueba\\pruebacs1\\pruebacs1\\pruebacs1.csproj",
+        "projectPath": "C:\\Users\\daciros\\OneDrive - Ucompensar\\Documents\\semillero\\pcreasistemas\\pruebacs1\\pruebacs1.csproj",
         "packagesPath": "C:\\Users\\daciros\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daciros\\source\\prueba\\pruebacs1\\pruebacs1\\obj\\",
+        "outputPath": "C:\\Users\\daciros\\OneDrive - Ucompensar\\Documents\\semillero\\pcreasistemas\\pruebacs1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\daciros\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -30,6 +32,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +44,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
