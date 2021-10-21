@@ -1,14 +1,14 @@
-﻿@page
+﻿@page "/Users/Register"
 @model RegisterModel
 @{
     var image = "";
-    if(Model.Input.Image != null)
+    if (Model.Input.Image != null)
     {
         image = "data:image/jpg;base64," + Convert.ToBase64String(Model.Input.Image, 0, Model.Input.Image.Length);
     }
     else
     {
-        image = "/images/images/default.png";
+        image = "~/images/images/default.png";
     }
 }
 
@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <div class="caption text-capitalize text-center">
                             <label class="btn btn-primary" for="files">Load Image</label>
-                            <input asp-for="Input.AvatarImage" accept="image/*" type="file" id="files" >
+                            <input asp-for="Input.AvatarImage" accept="image/*" type="file" id="files">
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                                    class="form-control" />
                                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                                         </div>
-                                        @if (Model.Input.Id.Equals(0) )
+                                        @if (Model.Input.Id.Equals(0))
                                         {
                                             <div class="form-group">
                                                 <input asp-for="Input.Password" placeholder="Password"
@@ -86,20 +86,20 @@
                                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                                             </div>
                                         }
-                                    <div class="form-group">
-                                        @if (Model.Input.Id.Equals(0) )
-                                        {
-                                            @Html.DropDownList("Input.Role", new SelectList(Model.Input.RolesList,
-                                      "Text", "Text"), "Select Role", new { @class = "form-control text-capitalize" })
-                                        }
-                                        else
-                                        {
-                                            @Html.DropDownList("Input.Role", new SelectList(Model.Input.RolesList,
-                                          "Text", "Text"), new { @class = "form-control text-capitalize" })
-                                        }
+                                        <div class="form-group">
+                                            @if (Model.Input.Id.Equals(0))
+                                            {
+                                                @Html.DropDownList("Input.Role", new SelectList(Model.Input.RolesList,
+                                          "Text", "Text"), "Select Role", new { @class = "form-control text-capitalize" })
+                                            }
+                                            else
+                                            {
+                                                @Html.DropDownList("Input.Role", new SelectList(Model.Input.RolesList,
+                                              "Text", "Text"), new { @class = "form-control text-capitalize" })
+                                            }
 
-                                        <span asp-validation-for="Input.Role" class="text-danger"></span>
-                                    </div>
+                                            <span asp-validation-for="Input.Role" class="text-danger"></span>
+                                        </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Register</button>
                                         </div>
@@ -107,7 +107,7 @@
                                             <label class="text-danger">@Html.DisplayFor(m => m.Input.ErrorMessage) </label>
                                         </div>
                                     </div>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,5 +117,5 @@
     </form>
 </div>
 @section Scripts{
-<partial name="_ValidationScriptsPartial" />
- }
+    <partial name="_ValidationScriptsPartial" />
+}
